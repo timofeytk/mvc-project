@@ -1,7 +1,7 @@
 {
     "autoload": {
         "psr-4": {
-            "mvc\\": "vendor/mvc",
+            "mvc\\": "vendor/mvc/core",
             "app\\": "app"
         }
     }
