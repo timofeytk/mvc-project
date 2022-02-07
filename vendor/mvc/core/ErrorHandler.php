@@ -6,9 +6,9 @@ class ErrorHandler{
 
     public function __construct(){
         if(DEBUG){
-            error_reporting(E_ALL);
+            error_reporting(-1);
         }else{
-            error_reporting(false);
+            error_reporting(0);
         }
 
         set_exception_handler([$this, 'exception_handler']);
@@ -27,13 +27,13 @@ class ErrorHandler{
     protected function printError($errno, $errstr, $errfile, $errline, $res=404){
         http_response_code($res);
         if($res == 404 && !DEBUG){
-            require_once dirname(__DIR__) . '/public/errors/404.php';
+            require_once __DIR__ . '/public/errors/404.php';
             die;
         }
         if(DEBUG){
-            require_once dirname(__DIR__) . '/public/errors/dev_errors.php';
+            require_once __DIR__ . '/public/errors/dev_errors.php';
         }else{
-            require_once dirname(__DIR__) . '/public/errors/prod_errors.php';
+            require_once __DIR__ . '/public/errors/prod_errors.php';
         }
         die;
     }

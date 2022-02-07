@@ -11,5 +11,6 @@ class App {
         session_start();
         self::$app = Registry::instance();
         new ErrorHandler();
+        Router::dispatch($query);
     }
 }
