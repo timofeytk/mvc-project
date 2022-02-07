@@ -20,7 +20,7 @@ class ErrorHandler{
     }
 
     protected function logErrors($msg='', $file='', $line=''){
-        error_log("[" . date('d-m-Y H:i:s') . "] Ошибка: {$msg} | Файл: {$file} | Строка: {$line} \n\n",
+        @error_log("[" . date('d-m-Y H:i:s') . "] Ошибка: {$msg} | Файл: {$file} | Строка: {$line} \n\n",
          3, dirname(__DIR__) . '/tmp/errors.log');
     }
 

@@ -5,7 +5,7 @@ namespace app\controllers;
 class MainController{
 
 	public function indexAction(){
-		echo 'index action';
+		echo __METHOD__;
 	}
 
 }
